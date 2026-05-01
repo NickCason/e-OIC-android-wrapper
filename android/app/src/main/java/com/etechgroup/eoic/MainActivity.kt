@@ -2,11 +2,16 @@ package com.etechgroup.eoic
 
 import android.os.Bundle
 import android.webkit.JavascriptInterface
+import android.webkit.WebView
 import com.getcapacitor.BridgeActivity
 
 class MainActivity : BridgeActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Internal field tool — keep chrome://inspect available in
+        // release builds so we can diagnose issues without publishing
+        // a debug variant.
+        WebView.setWebContentsDebuggingEnabled(true)
         // Expose the wrapper version (compiled in via BuildConfig) to the
         // webview before any script in the page runs. The web side reads
         // this through window.EoicWrapper.getVersion() inside
