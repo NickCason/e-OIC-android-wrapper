@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Splash background. 135-degree linear gradient from #D6532F (top-left)
+  through #BE4829 (mid) to #9C3A22 (bottom-right). Matches the in-app
+  splash overlay in the PWA so the launch reads as one continuous brand
+  moment whether the app is launched from the wrapper APK or the
+  installed PWA on iOS.
+
+  Android's <gradient> angles are quantized to 45-degree increments;
+  315 here corresponds visually to 135 in CSS terms (CSS measures angles
+  clockwise from 12 o'clock; Android measures clockwise from 3 o'clock).
+-->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
        android:shape="rectangle">
-    <solid android:color="@color/splashBackground" />
+    <gradient
+        android:angle="315"
+        android:startColor="#D6532F"
+        android:centerColor="#BE4829"
+        android:endColor="#9C3A22"
+        android:type="linear" />
 </shape>
